@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Temps passés — Sync</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css" />
+  <script src="taskpane.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h3>Ajouter / Lier au temps passé</h3>
+
+    <div class="field">
+      <label>Sujet</label>
+      <div id="subject">–</div>
+    </div>
+
+    <div class="field">
+      <label>Début — Fin</label>
+      <div id="range">–</div>
+    </div>
+
+    <label for="timeId">ID Temps passé (TP)</label>
+    <input id="timeId" type="text" placeholder="Ex : 12345 ou laisser vide pour créer" />
+
+    <div class="actions">
+      <button id="btnSave">Enregistrer dans Gepil</button>
+      <button id="btnAuto" type="button">Auto-detect / Pré-remplir</button>
+      <button id="btnAuthFallback" type="button">Se connecter (fallback OAuth)</button>
+    </div>
+
+    <p id="status" class="status"></p>
+    <p id="error" class="error"></p>
+  </div>
+</body>
+</html>

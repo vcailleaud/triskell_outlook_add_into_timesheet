@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: outlook-addin-backend
+    env: node
+    plan: free
+    region: frankfurt
+
+    buildCommand: |
+      cd backend
+      npm install
+
+    startCommand: |
+      cd backend
+      node server.js
+
+    envVars:
+      - key: NODE_ENV
+        value: production

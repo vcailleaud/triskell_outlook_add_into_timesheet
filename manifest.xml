@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Id>00000000-0000-0000-0000-000000000001</Id>
+<Version>1.0.0.0</Version>
+<ProviderName>TonEntreprise</ProviderName>
+<DefaultLocale>fr-FR</DefaultLocale>
+<DisplayName>Lien Temps Passés</DisplayName>
+<Description>Ajoute un événement dans Gepil</Description>
+<IconUrl>https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-32.png</IconUrl>
+<HighResolutionIconUrl>https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-64.png</HighResolutionIconUrl>
+<SupportsSharedFolders>true</SupportsSharedFolders>
+<Hosts>
+	<Host Name="Mailbox"/>
+</Hosts>
+<Requirements>
+	<Sets DefaultMinVersion="1.12">
+		<Set Name="Mailbox" MinVersion="1.12"/>
+	</Sets>
+</Requirements>
+<DefaultSettings>
+	<SourceLocation DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/taskpane.html"/>
+</DefaultSettings>
+<Permissions>ReadWriteItem</Permissions>
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0" Version="1.0">
+	<Hosts>
+		<Host xsi:type="MailHost">
+			<DesktopFormFactor>
+				<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+					<OfficeTab id="TabDefault">
+						<Group id="grpLogTime">
+							<Label resid="resGroupLabel"/>
+							<Control xsi:type="Button" id="btnOpenTaskpane">
+								<Label resid="resButtonLabel"/>
+								<Supertip>
+									<Title resid="resButtonLabel"/>
+									<Description resid="resButtonDescription"/>
+								</Supertip>
+								<Icon>
+									<bt:Image size="16" resid="icon16"/>
+									<bt:Image size="32" resid="icon32"/>
+									<bt:Image size="80" resid="icon80"/>
+								</Icon>
+								<Action xsi:type="ShowTaskpane">
+									<SourceLocation resid="resTaskpaneUrl"/>
+								</Action>
+							</Control>
+						</Group>
+					</OfficeTab>
+				</ExtensionPoint>
+			</DesktopFormFactor>
+		</Host>
+	</Hosts>
+	<Resources>
+		<bt:Images>
+			<bt:Image id="icon16" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-16.png"/>
+			<bt:Image id="icon32" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-32.png"/>
+			<bt:Image id="icon80" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-80.png"/>
+		</bt:Images>
+		<bt:Url id="resTaskpaneUrl" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/taskpane.html"/>
+		<bt:ShortStrings>
+			<bt:String id="resGroupLabel" DefaultValue="Temps passés"/>
+			<bt:String id="resButtonLabel" DefaultValue="Ajouter dans Gepil"/>
+		</bt:ShortStrings>
+		<bt:LongStrings>
+			<bt:String id="resButtonDescription" DefaultValue="Ajouter ce rendez-vous comme temps passé dans Gepil"/>
+		</bt:LongStrings>
+	</Resources>
+</VersionOverrides>
+</OfficeApp>

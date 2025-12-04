@@ -1,0 +1,8 @@
+body{font-family:Arial,Helvetica,sans-serif;padding:12px;}
+.container{max-width:520px}
+.field{margin-bottom:8px}
+label{font-weight:600}
+input[type=text]{width:100%;padding:8px;margin-top:6px}
+.actions{display:flex;gap:8px;margin-top:12px}
+.status{color:#0a5}
+.error{color:#c33}
