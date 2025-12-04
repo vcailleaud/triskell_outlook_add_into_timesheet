@@ -5,8 +5,8 @@
 <DefaultLocale>fr-FR</DefaultLocale>
 <DisplayName>Lien Temps Passés</DisplayName>
 <Description>Ajoute un événement dans Gepil</Description>
-<IconUrl>https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-32.png</IconUrl>
-<HighResolutionIconUrl>https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-64.png</HighResolutionIconUrl>
+<IconUrl>https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-32.png</IconUrl>
+<HighResolutionIconUrl>https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-64.png</HighResolutionIconUrl>
 <SupportsSharedFolders>true</SupportsSharedFolders>
 <Hosts>
 	<Host Name="Mailbox"/>
@@ -17,7 +17,7 @@
 	</Sets>
 </Requirements>
 <DefaultSettings>
-	<SourceLocation DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/taskpane.html"/>
+	<SourceLocation DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/taskpane.html"/>
 </DefaultSettings>
 <Permissions>ReadWriteItem</Permissions>
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0" Version="1.0">
@@ -51,11 +51,11 @@
 	</Hosts>
 	<Resources>
 		<bt:Images>
-			<bt:Image id="icon16" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-16.png"/>
-			<bt:Image id="icon32" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-32.png"/>
-			<bt:Image id="icon80" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/assets/icon-80.png"/>
+			<bt:Image id="icon16" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-16.png"/>
+			<bt:Image id="icon32" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-32.png"/>
+			<bt:Image id="icon80" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-80.png"/>
 		</bt:Images>
-		<bt:Url id="resTaskpaneUrl" DefaultValue="https://triskell-outlook-add-into-timesheet.onrender.com/taskpane.html"/>
+		<bt:Url id="resTaskpaneUrl" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/taskpane.html"/>
 		<bt:ShortStrings>
 			<bt:String id="resGroupLabel" DefaultValue="Temps passés"/>
 			<bt:String id="resButtonLabel" DefaultValue="Ajouter dans Gepil"/>
