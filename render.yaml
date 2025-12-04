@@ -1,18 +1,39 @@
-services:
-  - type: web
-    name: outlook-addin-backend
-    env: node
-    plan: free
-    region: frankfurt
-
-    buildCommand: |
-      cd backend
-      npm install
-
-    startCommand: |
-      cd backend
-      node server.js
-
-    envVars:
-      - key: NODE_ENV
-        value: production
+# Exported from Render on 2025-12-04T23:07:14Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: triskell_outlook_add_into_timesheet
+      runtime: static
+      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
+      staticPublishPath: frontend
+      autoDeployTrigger: commit
+    - type: web
+      name: triskell_outlook_add_into_timesheet_backend
+      runtime: node
+      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
+      plan: free
+      envVars:
+      - key: AUTH_REDIRECT_PATH
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: PORT
+        sync: false
+      - key: MY_TOOL_API_URL
+        sync: false
+      - key: API_SCOPE
+        sync: false
+      - key: TENANT_ID
+        sync: false
+      - key: BACKEND_CLIENT_SECRET
+        sync: false
+      - key: BACKEND_CLIENT_ID
+        sync: false
+      region: virginia
+      buildCommand: npm install
+      startCommand: node server.js
+      autoDeployTrigger: commit
