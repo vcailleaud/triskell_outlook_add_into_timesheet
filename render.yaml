@@ -1,20 +1,18 @@
-# Exported from Render on 2025-12-04T23:07:14Z
 version: "1"
 projects:
-- name: My project
+- name: triskell_outlook_addin
   environments:
   - name: Production
     services:
     - type: web
-      name: triskell_outlook_add_into_timesheet
+      name: triskell_outlook_addin_frontend
       runtime: static
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       staticPublishPath: frontend
-      buildCommand: |
-        echo "Static site deployed."
       autoDeployTrigger: commit
+
     - type: web
-      name: triskell_outlook_add_into_timesheet_backend
+      name: triskell_outlook_addin_backend
       runtime: node
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       plan: free
@@ -35,7 +33,7 @@ projects:
         sync: false
       - key: BACKEND_CLIENT_ID
         sync: false
-      region: virginia
+      region: frankfurt
       buildCommand: |
         cd backend
         npm install
