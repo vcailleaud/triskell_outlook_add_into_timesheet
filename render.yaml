@@ -10,6 +10,8 @@ projects:
       runtime: static
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       staticPublishPath: frontend
+      buildCommand: |
+        echo "Static site deployed."
       autoDeployTrigger: commit
     - type: web
       name: triskell_outlook_add_into_timesheet_backend
