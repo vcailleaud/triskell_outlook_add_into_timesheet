@@ -2,8 +2,6 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides"
-           xmlns:mailappor11="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
            xsi:type="MailApp">
 
   <!-- Identité -->
@@ -15,14 +13,14 @@
   <Description DefaultValue="Importe le temps passé sur ma feuille de temps" />
 
   <!-- Icônes -->
-  <IconUrl DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-32.png" />
+  <IconUrl DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-128.png" />
 
   <!-- Support & domaines -->
   <SupportUrl DefaultValue="https://ondemand-fr.triskellsoftware.com/triskell/init/skoran.fr" />
   <AppDomains>
-    <AppDomain>ondemand-fr.triskellsoftware.com</AppDomain>
-    <AppDomain>triskell-outlook-add-into-timesheet-crdd.onrender.com</AppDomain>
+    <AppDomain>https://ondemand-fr.triskellsoftware.com</AppDomain>
+    <AppDomain>https://triskell-outlook-add-into-timesheet-crdd.onrender.com</AppDomain>
   </AppDomains>
 
   <!-- Hébergeur -->
@@ -37,7 +35,7 @@
     </Sets>
   </Requirements>
 
-  <!-- OBLIGATOIRE pour la validation, ignoré si VersionOverrides est présent -->
+  <!-- Obligatoire pour validation (ignoré si VersionOverrides est présent) -->
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
@@ -45,22 +43,22 @@
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
-  </FormSettings> 
+  </FormSettings>
 
-  <!-- Permissions (lecture/écriture de l’élément courant) -->
+  <!-- Permissions -->
   <Permissions>ReadWriteItem</Permissions>
 
-  <!-- Règles d'activation : rendez-vous (lecture + rédaction) -->
+  <!-- Règles d'activation : rendez-vous (lecture + rédaction) Règles d'activation : rendez-vous (lecture + rédaction) -->
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
     <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
   </Rule>
 
-  <!-- (Optionnel) <DisableEntityHighlighting>true</DisableEntityHighlighting> -->
-
   <!-- VersionOverrides v1.0 au niveau racine -->
-  <mailappor:VersionOverrides xsi:type="VersionOverridesV1_0">
-    <!-- Ressources minimales pour compat -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
+
+    <!-- Ressources minimales -->
     <Resources>
       <bt:Images>
         <bt:Image id="Icon.16" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-16.png" />
@@ -75,23 +73,25 @@
       </bt:LongStrings>
     </Resources>
 
-    <!-- *** VersionOverrides v1.1 IMBRIQUÉ à l'intérieur de v1.0 *** -->
-    <mailappor11:VersionOverrides xsi:type="VersionOverridesV1_1">
-      <!-- Exigences spécifiques aux overrides -->
-      <Requirements>
-        <Sets DefaultMinVersion="1.5">
-          <Set Name="Mailbox" />
-        </Sets>
-      </Requirements>
+    <!-- VersionOverrides v1.1 IMBRIQUÉ pour les commandes calendrier -->
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+                      xsi:type="VersionOverridesV1_1">
 
-      <Hosts>
-        <Host xsi:type="Mailbox">
+      <Requirements>
+		  <bt:Sets DefaultMinVersion="1.5">
+			<bt:Set Name="Mailbox" />
+		  </bt:Sets>
+	  </Requirements>
+	
+	  <Hosts>
+        <Host xsi:type="MailHost">
           <DesktopFormFactor>
 
-            <!-- Ruban organisateur -->
-            <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+           
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
               <OfficeTab id="TabDefault">
-                <Group id="Grp.Calendar.Taskpane" label="Votre groupe" icon="Icon.16">
+                <Group id="Grp.Calendar.Taskpane">
+				  <Label resid="groupLabel" />
                   <Control xsi:type="Button" id="Btn.OpenTaskpane.Organizer">
                     <Label resid="Btn.Label" />
                     <Supertip>
@@ -104,7 +104,6 @@
                       <bt:Image size="80" resid="Icon.80" />
                     </Icon>
                     <Action xsi:type="ShowTaskpane">
-                      <TaskpaneId>Taskpane.Organizer</TaskpaneId>
                       <SourceLocation resid="Taskpane.Url" />
                       <SupportsPinning>true</SupportsPinning>
                     </Action>
@@ -113,10 +112,10 @@
               </OfficeTab>
             </ExtensionPoint>
 
-            <!-- Ruban participant -->
             <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
               <OfficeTab id="TabDefault">
-                <Group id="Grp.Calendar.Taskpane.Attendee" label="Votre groupe" icon="Icon.16">
+                <Group id="Grp.Calendar.Taskpane.Attendee">
+				  <Label resid="groupLabel2"/>
                   <Control xsi:type="Button" id="Btn.OpenTaskpane.Attendee">
                     <Label resid="Btn.Label" />
                     <Supertip>
@@ -129,7 +128,6 @@
                       <bt:Image size="80" resid="Icon.80" />
                     </Icon>
                     <Action xsi:type="ShowTaskpane">
-                      <TaskpaneId>Taskpane.Attendee</TaskpaneId>
                       <SourceLocation resid="Taskpane.Url" />
                       <SupportsPinning>true</SupportsPinning>
                     </Action>
@@ -137,12 +135,13 @@
                 </Group>
               </OfficeTab>
             </ExtensionPoint>
+			
 
           </DesktopFormFactor>
         </Host>
       </Hosts>
-
-      <!-- Ressources -->
+		
+      <!-- Ressources spécifiques v1.1 -->
       <Resources>
         <bt:Images>
           <bt:Image id="Icon.16" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/assets/icon-16.png" />
@@ -153,12 +152,27 @@
           <bt:Url id="Taskpane.Url" DefaultValue="https://triskell-outlook-add-into-timesheet-crdd.onrender.com/taskpane.html" />
         </bt:Urls>
         <bt:ShortStrings>
+		  <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+		  <bt:String id="groupLabel2" DefaultValue="My Add-in Group 2"/>
           <bt:String id="Btn.Label" DefaultValue="Ouvrir le volet" />
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="Btn.Description" DefaultValue="Ouvrir le volet de tâches pour ce rendez-vous." />
         </bt:LongStrings>
       </Resources>
-    </mailappor11:VersionOverrides>
-  </mailappor:VersionOverrides>
+	  <!-- 
+		<WebApplicationInfo>
+		  <Id>104a105c-dfd8-4e47-82d3-f7a0e3179e33</Id>
+		  <Resource>api://104a105c-dfd8-4e47-82d3-f7a0e3179e33</Resource>
+		  <Scopes>
+		    <Scope>openid</Scope>
+			<Scope>user.read</Scope>
+			<Scope>files.read</Scope>
+			<Scope>profile</Scope>
+			<Scope>access_as_user</Scope>
+		  </Scopes>
+		</WebApplicationInfo> -->
+
+		</VersionOverrides>
+	  </VersionOverrides>
 </OfficeApp>

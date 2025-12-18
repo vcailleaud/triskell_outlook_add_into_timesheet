@@ -184,6 +184,7 @@ function startInteractiveAuth(){
             showStatus('Authentifié (fallback)');
             // optionally store token for subsequent calls (not persisted)
             window._fallbackToken = data.token;
+            console.log("JWT SSO:", data.token);
             dialog.close();
           } else if (data.type === 'error') {
             showError(data.error);
