@@ -45,7 +45,7 @@
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
-  </FormSettings>
+  </FormSettings> 
 
   <!-- Permissions (lecture/écriture de l’élément courant) -->
   <Permissions>ReadWriteItem</Permissions>
