@@ -1,9 +1,34 @@
+Office.onReady(async () => {
+  const output = document.getElementById("jwtToken");
+
+  try {
+    const token = await OfficeRuntime.auth.getAccessToken({
+      allowSignInPrompt: true
+    });
+
+    console.log("JWT SSO récupéré :", token);
+
+    if (output) {
+      output.textContent = token;
+    }
+
+  } catch (error) {
+    console.error("Erreur SSO", error);
+
+    if (output) {
+      output.textContent =
+        "Erreur lors de la récupération du token SSO\n\n" +
+        JSON.stringify(error, null, 2);
+    }
+  }
+});
+/*
 Office.onReady(() => {
   document.getElementById("btnSave").onclick = onSaveClick;
   document.getElementById("btnAuto").onclick = autoDetect;
   document.getElementById("btnAuthFallback").onclick = startInteractiveAuth;
   init();
-});
+});*/
 
 async function init(){
   try {
@@ -184,7 +209,6 @@ function startInteractiveAuth(){
             showStatus('Authentifié (fallback)');
             // optionally store token for subsequent calls (not persisted)
             window._fallbackToken = data.token;
-            console.log("JWT SSO:", data.token);
             dialog.close();
           } else if (data.type === 'error') {
             showError(data.error);
