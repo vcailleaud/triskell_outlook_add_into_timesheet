@@ -5,14 +5,14 @@ projects:
   - name: Production
     services:
     - type: web
-      name: triskell_outlook_addin_frontend
+      name: triskell_outlook_addin_frontend (sans SSO)
       runtime: static
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       staticPublishPath: frontend
       autoDeployTrigger: commit
 
     - type: web
-      name: triskell_outlook_addin_backend
+      name: triskell_outlook_addin_backend (sans SSO)
       runtime: node
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       plan: free
