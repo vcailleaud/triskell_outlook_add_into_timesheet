@@ -1,6 +1,6 @@
 version: "1"
 projects:
-- name: triskell_outlook_addin
+- name: triskell_outlook_addin (sans SSO)
   environments:
   - name: Production
     services:
