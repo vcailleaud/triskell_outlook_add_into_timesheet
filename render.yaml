@@ -7,14 +7,14 @@ projects:
     - type: web
       name: triskell_outlook_addin_frontend
       runtime: static
-      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
+      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet/tree/suppression-SSO-outlook
       staticPublishPath: frontend
       autoDeployTrigger: commit
 
     - type: web
       name: triskell_outlook_addin_backend
       runtime: node
-      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
+      repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet/tree/suppression-SSO-outlook
       plan: free
       envVars:
       - key: TENANT_ID
