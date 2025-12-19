@@ -160,34 +160,18 @@
           <bt:String id="Btn.Description" DefaultValue="Ouvrir le volet de tâches pour ce rendez-vous." />
         </bt:LongStrings>
       </Resources>
-	   <!--
+	  <!-- 
 		<WebApplicationInfo>
 		  <Id>104a105c-dfd8-4e47-82d3-f7a0e3179e33</Id>
 		  <Resource>api://104a105c-dfd8-4e47-82d3-f7a0e3179e33</Resource>
 		  <Scopes>
 		    <Scope>openid</Scope>
-			  <Scope>User.Read</Scope>
-			  <Scope>files.read</Scope>
-			  <Scope>profile</Scope>
-        <Scope>Calendars.Read</Scope>
-			  <Scope>access_as_user</Scope>
+			<Scope>user.read</Scope>
+			<Scope>files.read</Scope>
+			<Scope>profile</Scope>
+			<Scope>access_as_user</Scope>
 		  </Scopes>
-		</WebApplicationInfo>
-    -->
-    
-    <!--
-    <WebApplicationInfo>
-      <Id>104a105c-dfd8-4e47-82d3-f7a0e3179e33/Id>
-      <Resource>api://triskell-outlook-add-into-timesheet-crdd.onrender.com</Resource>
-      <Scopes>
-        <Scope>openid</Scope>
-			  <Scope>user.read</Scope>
-			  <Scope>files.read</Scope>
-			  <Scope>profile</Scope>
-			  <Scope>access_as_user</Scope>
-      </Scopes>
-    </WebApplicationInfo>
-    -->
+		</WebApplicationInfo> -->
 
 		</VersionOverrides>
 	  </VersionOverrides>

@@ -22,13 +22,13 @@ Office.onReady(async () => {
     }
   }
 });
-/*
+
 Office.onReady(() => {
   document.getElementById("btnSave").onclick = onSaveClick;
   document.getElementById("btnAuto").onclick = autoDetect;
   document.getElementById("btnAuthFallback").onclick = startInteractiveAuth;
   init();
-});*/
+});
 
 async function init(){
   try {
