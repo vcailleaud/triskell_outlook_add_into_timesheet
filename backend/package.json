@@ -1,17 +1,23 @@
 {
-  "name": "outlook-addin-backend",
+  "name": "outlook-calendar-oauth-backend",
   "version": "1.0.0",
+  "private": true,
+  "description": "Backend OAuth Azure AD pour Outlook Calendar Add-in (Option A)",
   "main": "server.js",
-  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
   "dependencies": {
-    "@azure/msal-node": "^3.8.4",
-    "body-parser": "^1.20.0",
-    "cookie-parser": "^1.4.6",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "jwks-rsa": "^3.0.1",
-    "node-fetch": "^2.6.7"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^2.6.9"
   }
 }
