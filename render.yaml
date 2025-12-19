@@ -17,21 +17,15 @@ projects:
       repo: https://github.com/vcailleaud/triskell_outlook_add_into_timesheet
       plan: free
       envVars:
-      - key: AUTH_REDIRECT_PATH
-        sync: false
-      - key: FRONTEND_URL
-        sync: false
-      - key: PORT
-        sync: false
-      - key: MY_TOOL_API_URL
-        sync: false
-      - key: API_SCOPE
-        sync: false
       - key: TENANT_ID
         sync: false
-      - key: BACKEND_CLIENT_SECRET
+      - key: CLIENT_ID
         sync: false
-      - key: BACKEND_CLIENT_ID
+      - key: CLIENT_SECRETT
+        sync: false
+      - key: REDIRECT_URI
+        sync: false
+      - key: APP_JWT_SECRET
         sync: false
       region: frankfurt
       buildCommand: |
